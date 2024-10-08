@@ -10,7 +10,6 @@ class Mixin:
         data['active_home'] = self.request.path == '/'
         data['active_settings'] = self.request.path == '/settings/'
         data['active_services'] = self.request.path == '/services/'
-        data['active_pricing'] = self.request.path == '/pricing/'
         data['active_contacts'] = self.request.path == '/contacts/'
         return data
 
@@ -23,9 +22,6 @@ class Settings(Mixin, TemplateView):
     
 class Services(Mixin, TemplateView):
     template_name = 'app/Services.html'
-
-class Pricing(Mixin, TemplateView):
-    template_name = 'app/Pricing.html'
 
 class Contact(Mixin, TemplateView):
     template_name = 'app/Contact.html'
